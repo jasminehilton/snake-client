@@ -13,9 +13,17 @@ const connect = function() {
   conn.setEncoding("utf8");
 
   conn.on("data", (data) => {
-    console.log("data", data);
+    console.log("Name: JDH", data);
   });
+
+  conn.on("connect", () => {
+    conn.write("Snek server is connected ...");
+    
+  });
+
   
+
+
   return conn;
 };
 
