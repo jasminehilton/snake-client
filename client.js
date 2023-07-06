@@ -2,8 +2,7 @@ const net = require("net");
 
 // establishes a connection with the game server
 
-
-const connect = function() {
+const connect = function () {
   const conn = net.createConnection({
     host: "165.227.47.243",
     port: 50541,
@@ -13,16 +12,28 @@ const connect = function() {
   conn.setEncoding("utf8");
 
   conn.on("data", (data) => {
-    console.log("Name: JDH", data);
+    console.log("data", data);
   });
 
   conn.on("connect", () => {
     conn.write("Snek server is connected ...");
-    
   });
 
-  
+  conn.on("connect", () => {
+    conn.write("Name: JDH");
+  });
 
+  // conn.on("data", () => {
+  //   console.log("Move: up");
+  // });
+
+  // conn.on("data", (data) => {
+  //   conn.write("data", data);
+  // });
+
+  // conn.on("moveUp", () => {
+  //   conn.write("Move: up");
+  // });
 
   return conn;
 };
