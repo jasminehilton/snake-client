@@ -11,6 +11,9 @@ const setupInput = (conn) => {
 };
 
 const handleUserInput = function (key) {
+  if (key === "\u0003") {
+    process.exit();
+  }
   if (key === "w") {
     connection.write("Move: up");
   }
@@ -23,8 +26,14 @@ const handleUserInput = function (key) {
   if (key === "d") {
     connection.write("Move: right");
   }
-  if (key === "\u0003") {
-    process.exit();
+  if (key === "1") {
+    connection.write("Say: sssup");
+  }
+  if (key === "2") {
+    connection.write("Say: sssassafrass");
+  }
+  if (key === "3") {
+    connection.write("Say: sssend it!");
   }
 };
 
