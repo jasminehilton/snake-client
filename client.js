@@ -23,18 +23,6 @@ const connect = function () {
     conn.write("Name: JDH");
   });
 
-  // conn.on("data", () => {
-  //   console.log("Move: up");
-  // });
-
-  // conn.on("data", (data) => {
-  //   conn.write("data", data);
-  // });
-
-  // conn.on("moveUp", () => {
-  //   conn.write("Move: up");
-  // });
-
   return conn;
 };
 
